@@ -4,36 +4,75 @@
     <title>Bone Digital Service</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #00b4db, #ffeb3b); /* Biru ke kuning */
+            font-family: 'Courier New', monospace; /* Font ala kode */
+            background-color: #000000; /* Hitam ala Matrix */
             text-align: center;
-            color: #ffffff;
+            color: #00ff00; /* Hijau neon khas Matrix */
+            margin: 0;
+            padding: 0;
+        }
+        /* Animasi kode jatuh */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Biar di belakang konten */
+        }
+        .matrix-bg::before {
+            content: "0101 1001 0010 1100 1010 0111 0001 1111";
+            font-size: 20px;
+            color: #00ff00;
+            opacity: 0.3;
+            animation: fall 10s infinite linear;
+            position: absolute;
+            top: -100%;
+            left: 10%;
+        }
+        .matrix-bg::after {
+            content: "1100 0011 1010 0101 1111 0000 1001 0110";
+            font-size: 20px;
+            color: #00ff00;
+            opacity: 0.3;
+            animation: fall 15s infinite linear;
+            position: absolute;
+            top: -150%;
+            left: 70%;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(200vh); }
         }
         h1 {
-            color: #ffffff;
+            color: #00ff00;
             font-size: 40px;
+            text-shadow: 0 0 10px #00ff00; /* Efek glow */
         }
         h2 {
-            color: #ffffff;
+            color: #00ff00;
         }
         .ebook {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.7); /* Kotak gelap transparan */
             margin: 20px auto;
             padding: 20px;
             width: 60%;
-            border: 2px solid #000000;
-            color: #000000;
+            border: 2px solid #00ff00;
+            color: #00ff00;
             font-size: 22px;
+            text-shadow: 0 0 5px #00ff00;
         }
     </style>
 </head>
 <body>
+    <div class="matrix-bg"></div> <!-- Background animasi -->
     <h1>Bone Digital Service</h1>
-    <p>Toko E-book Terbaik Buatan Bone81-Tech!</p>
+    <p>Toko e-book terbaik buatan Bone81-Tech!</p>
     <h2>E-Book Unggulan</h2>
     <div class="ebook">
         <strong>E-Book Cyber Security (Sebuah Pemahaman)</strong> - Rp 75.000
-        <p>Memahami dasar-dasar keamanan siber dengan cara simpel dan praktis!</p>
+        <p>Pahami dasar-dasar keamanan siber dengan cara simpel dan praktis!</p>
     </div>
 </body>
 </html>
