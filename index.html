@@ -10,9 +10,8 @@
             color: #00ff00;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Biar gak ada scrollbar */
+            overflow: hidden;
         }
-        /* Background kode horizontal */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -26,10 +25,9 @@
             font-size: 18px;
             color: #00ff00;
             opacity: 0.4;
-            white-space: nowrap; /* Biar kode gak putus */
+            white-space: nowrap;
             animation: scroll 15s infinite linear;
         }
-        /* Bikin banyak kode di posisi berbeda */
         .matrix-bg span:nth-child(1) { top: 5%; left: -50%; animation-duration: 10s; }
         .matrix-bg span:nth-child(2) { top: 15%; left: -60%; animation-duration: 12s; }
         .matrix-bg span:nth-child(3) { top: 25%; left: -70%; animation-duration: 8s; }
@@ -39,10 +37,20 @@
         .matrix-bg span:nth-child(7) { top: 65%; left: -110%; animation-duration: 13s; }
         .matrix-bg span:nth-child(8) { top: 75%; left: -120%; animation-duration: 7s; }
         .matrix-bg span:nth-child(9) { top: 85%; left: -130%; animation-duration: 15s; }
-        .matrix-bg span:nth-child(10) { top: 95%; left: -140%; animation-duration: 10s; }
+        .footer-text {
+            position: absolute;
+            bottom: 10px; /* Taruh di bawah */
+            left: -100%;
+            font-size: 18px;
+            color: #00ff00;
+            opacity: 0.6;
+            white-space: nowrap;
+            animation: scroll 20s infinite linear; /* Lebih lambat biar kebaca */
+            z-index: 1;
+        }
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(200vw); } /* Gerak ke kanan */
+            100% { transform: translateX(200vw); }
         }
         h1 {
             color: #00ff00;
@@ -61,8 +69,19 @@
             color: #00ff00;
             font-size: 22px;
             text-shadow: 0 0 5px #00ff00;
-            position: relative; /* Biar di atas background */
+            position: relative;
             z-index: 1;
+        }
+        .buy-btn {
+            background-color: #ffeb3b;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            text-shadow: none;
+            text-decoration: none;
+            display: inline-block;
         }
     </style>
 </head>
@@ -77,7 +96,6 @@
         <span>1110 0001 1011 0100 1101 0011</span>
         <span>1001 0111 1100 0000 1010 1111</span>
         <span>0011 0101 1101 1000 0110 1011</span>
-        <span>1111 0000 1010 0111 1100 0011</span>
     </div>
     <h1>Bone Digital Service</h1>
     <p>Toko e-book terbaik buatan Bone81-Tech!</p>
@@ -85,6 +103,9 @@
     <div class="ebook">
         <strong>E-Book Cyber Security (Sebuah Pemahaman)</strong> - Rp 75.000
         <p>Pahami dasar-dasar keamanan siber dengan cara simpel dan praktis!</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20beli%20E-Book%20Cyber%20Security%20(Sebuah%20Pemahaman)%20-%20Rp%2075.000" class="buy-btn">Beli Sekarang</a>
     </div>
+    <p>Belajar cyber security bareng, gak perlu jadi hacker!</p>
+    <div class="footer-text">Under Construction - Gw bukan Hacker Cukk - Hanya orang jualan E-book</div>
 </body>
 </html>
