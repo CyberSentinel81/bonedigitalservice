@@ -4,57 +4,56 @@
     <title>Bone Digital Service</title>
     <style>
         body {
-            font-family: 'Courier New', monospace; /* Font ala kode */
-            background-color: #000000; /* Hitam ala Matrix */
+            font-family: 'Courier New', monospace;
+            background-color: #000000;
             text-align: center;
-            color: #00ff00; /* Hijau neon khas Matrix */
+            color: #00ff00;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Biar gak ada scrollbar */
         }
-        /* Animasi kode jatuh */
+        /* Background kode horizontal */
         .matrix-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Biar di belakang konten */
+            z-index: -1;
         }
-        .matrix-bg::before {
-            content: "0101 1001 0010 1100 1010 0111 0001 1111";
-            font-size: 20px;
-            color: #00ff00;
-            opacity: 0.3;
-            animation: fall 10s infinite linear;
+        .matrix-bg span {
             position: absolute;
-            top: -100%;
-            left: 10%;
-        }
-        .matrix-bg::after {
-            content: "1100 0011 1010 0101 1111 0000 1001 0110";
-            font-size: 20px;
+            font-size: 18px;
             color: #00ff00;
-            opacity: 0.3;
-            animation: fall 15s infinite linear;
-            position: absolute;
-            top: -150%;
-            left: 70%;
+            opacity: 0.4;
+            white-space: nowrap; /* Biar kode gak putus */
+            animation: scroll 15s infinite linear;
         }
-        @keyframes fall {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(200vh); }
+        /* Bikin banyak kode di posisi berbeda */
+        .matrix-bg span:nth-child(1) { top: 5%; left: -50%; animation-duration: 10s; }
+        .matrix-bg span:nth-child(2) { top: 15%; left: -60%; animation-duration: 12s; }
+        .matrix-bg span:nth-child(3) { top: 25%; left: -70%; animation-duration: 8s; }
+        .matrix-bg span:nth-child(4) { top: 35%; left: -80%; animation-duration: 14s; }
+        .matrix-bg span:nth-child(5) { top: 45%; left: -90%; animation-duration: 9s; }
+        .matrix-bg span:nth-child(6) { top: 55%; left: -100%; animation-duration: 11s; }
+        .matrix-bg span:nth-child(7) { top: 65%; left: -110%; animation-duration: 13s; }
+        .matrix-bg span:nth-child(8) { top: 75%; left: -120%; animation-duration: 7s; }
+        .matrix-bg span:nth-child(9) { top: 85%; left: -130%; animation-duration: 15s; }
+        .matrix-bg span:nth-child(10) { top: 95%; left: -140%; animation-duration: 10s; }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(200vw); } /* Gerak ke kanan */
         }
         h1 {
             color: #00ff00;
             font-size: 40px;
-            text-shadow: 0 0 10px #00ff00; /* Efek glow */
+            text-shadow: 0 0 10px #00ff00;
         }
         h2 {
             color: #00ff00;
         }
         .ebook {
-            background-color: rgba(0, 0, 0, 0.7); /* Kotak gelap transparan */
+            background-color: rgba(0, 0, 0, 0.7);
             margin: 20px auto;
             padding: 20px;
             width: 60%;
@@ -62,11 +61,24 @@
             color: #00ff00;
             font-size: 22px;
             text-shadow: 0 0 5px #00ff00;
+            position: relative; /* Biar di atas background */
+            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <div class="matrix-bg"></div> <!-- Background animasi -->
+    <div class="matrix-bg">
+        <span>0101 1100 0011 1010 0111 1001</span>
+        <span>1111 0000 1010 0101 1100 0011</span>
+        <span>1001 0110 1101 0001 1011 0100</span>
+        <span>0011 1110 0101 1000 0111 1010</span>
+        <span>1100 0001 1011 0110 1001 1111</span>
+        <span>0101 1010 0011 1100 0111 1000</span>
+        <span>1110 0001 1011 0100 1101 0011</span>
+        <span>1001 0111 1100 0000 1010 1111</span>
+        <span>0011 0101 1101 1000 0110 1011</span>
+        <span>1111 0000 1010 0111 1100 0011</span>
+    </div>
     <h1>Bone Digital Service</h1>
     <p>Toko e-book terbaik buatan Bone81-Tech!</p>
     <h2>E-Book Unggulan</h2>
